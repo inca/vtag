@@ -13,10 +13,10 @@ app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(__dirname + '/public'));
-app.use("/dist", express.static(__dirname + '/dist'));
+app.use("/dist", express.static(__dirname + '/../dist'));
 app.use(express.errorHandler());
 
-app.get('/', function(req, res, next) {
+app.get('/', function(req, res) {
   res.render("index");
 });
 
