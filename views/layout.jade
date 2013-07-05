@@ -5,5 +5,9 @@ html
     link(rel='stylesheet', href='/css/main.css')
     script(src='/js/jquery-2.0.3.min.js')
     script(src='/dist/vtag-0.1.min.js')
+    script.
+      $(function() {
+        $("[data-tag]").vtag();
+      });
   body
     block content

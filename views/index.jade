@@ -2,3 +2,108 @@ extends layout
 
 block content
   h1 Welcome!
+  p.
+    This is a simple tag:
+    <canvas width="32" height="32" data-tag="preved"></canvas>.
+  p.
+    Here's another one, just like the previous one, but a bit bigger:
+    <canvas width="64" height="64" data-tag="preved"></canvas>.
+  p.
+    Now a different one:
+    <canvas width="32" height="32" data-tag="hello"></canvas>.
+  p.
+    <canvas width="32" height="32" data-tag="a"></canvas>
+    <canvas width="32" height="32" data-tag="b"></canvas>
+    <canvas width="32" height="32" data-tag="c"></canvas>
+    <canvas width="32" height="32" data-tag="d"></canvas>
+    <canvas width="32" height="32" data-tag="e"></canvas>
+    <canvas width="32" height="32" data-tag="f"></canvas>
+    <canvas width="32" height="32" data-tag="g"></canvas>
+    <canvas width="32" height="32" data-tag="h"></canvas>
+    <canvas width="32" height="32" data-tag="i"></canvas>
+    <canvas width="32" height="32" data-tag="j"></canvas>
+    <canvas width="32" height="32" data-tag="k"></canvas>
+    <canvas width="32" height="32" data-tag="l"></canvas>
+    <canvas width="32" height="32" data-tag="m"></canvas>
+    <canvas width="32" height="32" data-tag="n"></canvas>
+    <canvas width="32" height="32" data-tag="o"></canvas>
+    <canvas width="32" height="32" data-tag="p"></canvas>
+    <canvas width="32" height="32" data-tag="q"></canvas>
+    <canvas width="32" height="32" data-tag="r"></canvas>
+    <canvas width="32" height="32" data-tag="s"></canvas>
+    <canvas width="32" height="32" data-tag="t"></canvas>
+    <canvas width="32" height="32" data-tag="u"></canvas>
+    <canvas width="32" height="32" data-tag="v"></canvas>
+    <canvas width="32" height="32" data-tag="w"></canvas>
+    <canvas width="32" height="32" data-tag="x"></canvas>
+    <canvas width="32" height="32" data-tag="y"></canvas>
+    <canvas width="32" height="32" data-tag="z"></canvas>
+    <canvas width="32" height="32" data-tag="1a"></canvas>
+    <canvas width="32" height="32" data-tag="1b"></canvas>
+    <canvas width="32" height="32" data-tag="1c"></canvas>
+    <canvas width="32" height="32" data-tag="1d"></canvas>
+    <canvas width="32" height="32" data-tag="1e"></canvas>
+    <canvas width="32" height="32" data-tag="1f"></canvas>
+    <canvas width="32" height="32" data-tag="1g"></canvas>
+    <canvas width="32" height="32" data-tag="1h"></canvas>
+    <canvas width="32" height="32" data-tag="1i"></canvas>
+    <canvas width="32" height="32" data-tag="1j"></canvas>
+    <canvas width="32" height="32" data-tag="1k"></canvas>
+    <canvas width="32" height="32" data-tag="1l"></canvas>
+    <canvas width="32" height="32" data-tag="1m"></canvas>
+    <canvas width="32" height="32" data-tag="1n"></canvas>
+    <canvas width="32" height="32" data-tag="1o"></canvas>
+    <canvas width="32" height="32" data-tag="1p"></canvas>
+    <canvas width="32" height="32" data-tag="1q"></canvas>
+    <canvas width="32" height="32" data-tag="1r"></canvas>
+    <canvas width="32" height="32" data-tag="1s"></canvas>
+    <canvas width="32" height="32" data-tag="1t"></canvas>
+    <canvas width="32" height="32" data-tag="1u"></canvas>
+    <canvas width="32" height="32" data-tag="1v"></canvas>
+    <canvas width="32" height="32" data-tag="1w"></canvas>
+    <canvas width="32" height="32" data-tag="1x"></canvas>
+    <canvas width="32" height="32" data-tag="1y"></canvas>
+    <canvas width="32" height="32" data-tag="1z"></canvas>
+    <canvas width="32" height="32" data-tag="2a"></canvas>
+    <canvas width="32" height="32" data-tag="2b"></canvas>
+    <canvas width="32" height="32" data-tag="2c"></canvas>
+    <canvas width="32" height="32" data-tag="2d"></canvas>
+    <canvas width="32" height="32" data-tag="2e"></canvas>
+    <canvas width="32" height="32" data-tag="2f"></canvas>
+    <canvas width="32" height="32" data-tag="2g"></canvas>
+    <canvas width="32" height="32" data-tag="2h"></canvas>
+    <canvas width="32" height="32" data-tag="2i"></canvas>
+    <canvas width="32" height="32" data-tag="2j"></canvas>
+    <canvas width="32" height="32" data-tag="2k"></canvas>
+    <canvas width="32" height="32" data-tag="2l"></canvas>
+    <canvas width="32" height="32" data-tag="2m"></canvas>
+    <canvas width="32" height="32" data-tag="2n"></canvas>
+    <canvas width="32" height="32" data-tag="2o"></canvas>
+    <canvas width="32" height="32" data-tag="2p"></canvas>
+    <canvas width="32" height="32" data-tag="2q"></canvas>
+    <canvas width="32" height="32" data-tag="2r"></canvas>
+    <canvas width="32" height="32" data-tag="2s"></canvas>
+    <canvas width="32" height="32" data-tag="2t"></canvas>
+    <canvas width="32" height="32" data-tag="2u"></canvas>
+    <canvas width="32" height="32" data-tag="2v"></canvas>
+    <canvas width="32" height="32" data-tag="2w"></canvas>
+    <canvas width="32" height="32" data-tag="2x"></canvas>
+    <canvas width="32" height="32" data-tag="2y"></canvas>
+    <canvas width="32" height="32" data-tag="2z"></canvas>
+
+  p.
+    We'll generate 1000 random vtags below:
+
+  div#random
+
+  script.
+    $(function() {
+      var cnt = $("#random");
+      for (var i = 0; i < 1000; i++) {
+        var c = $('<canvas width="16" height="16"/>');
+        cnt.append(c);
+        c.attr("data-tag", Math.random());
+        c.vtag({ transparent: true, inverse: true });
+      }
+    });
+
