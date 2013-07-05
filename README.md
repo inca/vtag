@@ -14,7 +14,9 @@ Essentially any modern version of [JQuery](http://jquery.com) will do
 
 ## Usage
 
-1. Grab uncompressed on minified version from `dist`.
+1. Grab [uncompressed](https://raw.github.com/inca/vtag/master/dist/vtag-0.1.js)
+   or [minified](https://raw.github.com/inca/vtag/master/dist/vtag-0.1.min.js)
+   version from [dist](https://github.com/inca/vtag/tree/master/dist).
 
 2. Include VTag on your page where appropriate. Most of the time you
    would want to include it just before closing `</body>`.
@@ -45,8 +47,6 @@ Essentially any modern version of [JQuery](http://jquery.com) will do
 4. Have fun!
 
 ## License
-
-License
 
 (The MIT License)
 
