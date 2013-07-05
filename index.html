@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+  <head>
+    <title>VTag — simple entity visualizer for JQuery</title>
+    <link href="./misc/public/css/main.css"
+          rel="stylesheet"
+          type="text/css"/>
+    <link rel="shortcut icon"
+          type="image/x-icon"
+          href="./misc/public/favicon.ico"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <script type="text/javascript"
+            src="./misc/public/js/jquery-2.0.3.min.js">
+    </script>
+    <script type="text/javascript"
+            src="./dist/vtag-0.1.min.js">
+    </script>
+    <script>
+      $(function() {
+        $('canvas[data-tag]').vtag();
+
+        $('input.live').keyup(function() {
+          var i = $(this);
+          var c = $('canvas.live');
+          c.attr("data-tag", i.val());
+          c.vtag();
+        });
+
+        $('#gen-rnd').click(function() {
+          var i, c;
+          var cnt = $("#generated");
+          cnt.empty();
+          var start = new Date().getTime();
+          for (i = 0; i < 1000; i++) {
+            c = $("<canvas width='16' height='16'/>");
+            c.attr("data-tag", Math.random());
+            cnt.append(c);
+            c.vtag();
+          }
+          cnt.append("<hr/>");
+          for (i = 0; i < 1000; i++) {
+            c = $("<canvas width='16' height='16'/>");
+            c.attr("data-tag", Math.random());
+            cnt.append(c);
+            c.vtag({ transparent: true, inverse: true });
+          }
+          var time = new Date().getTime() - start;
+          cnt.append("<p>Generated 2000 VTags in " + time + "ms.</p>");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="nav">
+      <a class="active"
+         href="http://inca.github.io/vtag">
+        <canvas data-tag="Home"
+                width="24"
+                height="24">
+        </canvas>
+        <span>Home</span>
+      </a>
+      <a href="https://github.com/inca/vtag">
+        <canvas data-tag="source"
+                width="24"
+                height="24">
+        </canvas>
+        <span>Source</span>
+      </a>
+      <a href="https://github.com/inca/vtag/tree/master/dist">
+        <canvas data-tag="download"
+                width="24"
+                height="24">
+        </canvas>
+        <span>Download</span>
+      </a>
+    </div>
+    <div class="hero">
+      <canvas data-tag="VTag"
+              width="128"
+              height="128"
+              class="float-right">
+      </canvas>
+      <h1>VTag</h1>
+      <div class="subtitle">
+        <span>simple entity visualizer for</span>
+        <a href="http://jquery.com">JQuery</a>
+      </div>
+    </div>
+    <div class="content">
+      <div class="vtagger">
+        <input class="live" value="Live demo"/>
+        <canvas class="live"
+                data-tag="Live demo"
+                width="48"
+                height="48">
+        </canvas>
+      </div>
+
+      <h2>Synopsis</h2>
+      <div class="float-right synopsis">
+        <span class="bigarr">&rarr;</span>
+        <canvas data-tag="Message, data, hash, etc."
+                width="32"
+                height="32">
+        </canvas>
+      </div>
+        <pre>&lt;canvas data-tag="Message, data, hash, etc."
+        width="32"
+        height="32">
+&lt;/canvas></pre>
+
+      <h2>Installation</h2>
+      <ol>
+        <li>Make sure <a href="http://jquery.com/download/">JQuery</a> is available on your page.</li>
+        <li>
+          <p>Grab <a href="https://raw.github.com/inca/vtag/master/dist/vtag-0.1.min.js">minified</a> version of VTag, add it to your page. Consult with following snippet to get the job done:</p>
+          <pre>...
+    &lt;script type="text/javascript"
+            src="/js/vtag-0.1.min.js">
+    &lt;/script>
+  &lt;/body>
+&lt;/html></pre>
+        </li>
+        <li>
+          <p>Add initialization code. For example:</p>
+          <pre>&lt;script type="text/javascript">
+  $(function() {
+    $("[data-tag]").vtag();
+  });
+&lt;/script></pre>
+        </li>
+        <li>VTags are ready to be rendered to your heart's content.</li>
+      </ol>
+
+      <h2>F.A.Q.</h2>
+
+      <dl>
+
+        <dt>What's it all about?</dt>
+        <dd>
+          It's all about generating a simple random colorful icon for
+          a given string. This icon remains constant for every particular
+          string, effectively representing its <em>visual hash</em> or
+          <em>fingerprint</em>. We refer to such icon as <strong>VTag</strong>
+          (<em>V</em> stands for <em>Visual</em>).
+        </dd>
+        <dd>
+          Prepended as a small icon to every row in a large and boring dataset,
+          VTags can cause substantial increase of perceptual recognizability
+          and distinctibility of data.</dd>
+        <dd>The effect is especially evident when user repeatedly
+          scans through the same records multiple times.
+        </dd>
+
+        <dt>This stuff is childish — there's no way I'm using it in my dead-serious
+          enteprise application.</dt>
+        <dd>
+          Most enterprise applications out there could use some techniques
+          to improve the scan-through quality and distinctibility
+          of their datasets for humans.
+
+          Vivid colors — despite their ugliness — are highly recommended as
+          they create quick perceptive associations.
+        </dd>
+        <dd>
+          However, it is remarkably easy to tweak the color scheme to suit
+          your very special needs (you can even create monochromatic color scheme).
+          Make sure you share your thoughts with the World by submitting
+          <a href="http://github.com/inca/vtag/issues">issues</a> and
+          pull requests.
+        </dd>
+
+        <dt>I've already seen this kind of icons.
+          Can't seem to remember, where exactly...</dt>
+        <dd>Yup. We took the idea of the default <code>retro</code>
+          icons at <a href="http://gravatar.com">Gravatar</a> for our
+          initial renderer. None of the code is taken from them, though.</dd>
+        <dd>However, we plan to extend our renderers to support other
+        styles of visual distinctibility. Your contributions are welcome!</dd>
+
+        <dt>How does it work?</dt>
+        <dd>Each tag is rendered entirely on client side (in browser) using
+        HTML5 canvas API. All parameters (colors, points, etc.) are evaluated
+        by analysing the message from <code>data-tag</code> attribute.</dd>
+
+        <dt>I've never used <code>&lt;canvas&gt;</code> element in my markup.
+        I kinda afraid of it.</dt>
+        <dd>There's nothing too special about <code>canvas</code>
+        from the document designer's view. Most of the time browsers will
+        render canvas as inline elements by default (they behave pretty much
+        like images).</dd>
+        <dd>You can apply CSS rules just like you would do to <code>img</code>.</dd>
+        <dd>However, there is one (arguably annoying) thing you should always
+        remember about: <code>canvas</code> element is <strong>not a self-closing
+        tag</strong>.</dd>
+        <dd>
+          <p>Doing like this is <strong>prohibited</strong>:</p>
+          <pre>&lt;canvas data-tag="Hello world!"/></pre>
+          <p>Always type like this instead:</p>
+          <pre>&lt;canvas data-tag="Hello world!">&lt;/canvas></pre>
+        </dd>
+
+        <dt>What about the speed? How fast is it?</dt>
+        <dd>Speed is mostly limited to MD5 hash evaluation.</dd>
+        <dd>See for yourself:
+          <input id="gen-rnd" type="button" value="Generate some"/>
+        </dd>
+        <dd id="generated">
+        </dd>
+        <dd>Still, network-incurred Gravatar is much more costly.</dd>
+      </dl>
+    </div>
+    <div class="footer">
+      <span>Created by</span>
+      <a href="http://github.com/inca">Boris Okunskiy</a>
+      <span>in 2013</span>
+    </div>
+  </body>
+</html>

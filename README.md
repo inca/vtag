@@ -1,4 +1,4 @@
-# VTag -- simple hash tag visualization for JQuery
+# VTag -- simple entity visualizer for JQuery
 
 Inspired by [Gravatar's retro](http://en.gravatar.com/site/implement/images/)
 hash visualiser, VTag is a client-side renderer of arbitrary data tags

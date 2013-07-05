@@ -1,0 +1,145 @@
+body {
+  margin:0;
+  padding:0;
+  font-size:16px;
+  font-family: "Helvetica Neue", HelveticaNeue, Helvetica, Arial, sans-serif;
+  font-weight:300;
+  background: #222 url(../img/bg.png) repeat;
+  color: #fff;
+}
+
+a, a:hover, a:visited {
+  color:#ffe;
+}
+
+.float-right { float:right }
+.pad { padding: 16px }
+
+.nav {
+  padding:32px 64px
+}
+
+.nav a {
+  font-size:24px;
+  display:inline-block;
+  text-decoration:none;
+  padding:6px 16px;
+  margin:16px 8px;
+  background:#151515;
+  box-shadow:0 1px 1px rgba(255,255,255,.2) inset, 0 1px 3px #000;
+  border-radius:4px;
+}
+
+.nav a canvas {
+  position:relative;
+  display:inline-block;
+  vertical-align:middle;
+  top:-2px;
+  left:-4px;
+  border-radius:4px
+}
+
+.hero {
+  background:#000;
+  box-shadow:0 1px 3px rgba(255,255,255,.1),
+  0 0 1px rgba(255,255,255,.25);
+  padding:32px 64px;
+}
+
+.content {
+  margin:24px 64px;
+  padding:8px;
+  background:#151515;
+  box-shadow:0 1px 1px rgba(255,255,255,.15) inset, 0 1px 3px #000;
+  border-radius:4px;
+}
+
+.footer {
+  margin: 48px 0;
+  text-align: center;
+  font-size:12px;
+}
+
+h1 {
+  margin:0 0 24px;
+  font-size:64px;
+  font-family:"HelveticaNeue-UltraLight", "Helvetica Neue UltraLight",
+  "Helvetica Neue", "HelveticaNeue", "Segoe UI", "Calibri",
+  Arial, Helvetica, sans-serif;
+  font-weight: 100;
+}
+
+h2 {
+  font-size:28px;
+  font-weight:normal;
+  font-style:normal;
+}
+
+li, p {
+  margin:.75em 0;
+  line-height:1.5em;
+}
+
+dt {
+  font-size:20px;
+  font-style:italic;
+  color:#ccc;
+  margin:16px 0;
+}
+
+dd {
+  margin: .75em 2.5em;
+}
+
+.subtitle {
+  font-size:24px;
+  font-weight:100;
+}
+
+.vtagger {
+  text-align:center;
+}
+
+input.live, canvas.live {
+  display:inline-block;
+  vertical-align:middle;
+}
+
+input.live {
+  margin:4px;
+  padding:4px 16px;
+  width:240px;
+  font-size: 32px;
+  background:#000;
+  outline:0;
+  border:0;
+  color:#fff;
+  text-shadow:0 1px 1px #000;
+  border-radius:4px;
+  box-shadow:0 1px 3px rgba(255,255,255,.2);
+}
+
+canvas.live {
+  border-radius:4px;
+}
+
+.synopsis {
+  padding: 16px;
+  line-height:32px;
+}
+
+.synopsis * { vertical-align: middle }
+
+.synopsis .bigarr {
+  font-size:32px;
+  margin: 0 16px;
+}
+
+@media screen and (max-width:576px) {
+  .hero, .nav {
+    padding: 32px 8px;
+  }
+  .content {
+    margin: 8px;
+  }
+}
