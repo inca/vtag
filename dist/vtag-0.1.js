@@ -170,11 +170,13 @@ $.vtag.renderers.retro = function(opts) {
   var hue, sat, val;
 
   hue = opts.bytes[0] * 360. / 255;      // [0, 360)
-  sat = opts.bytes[1] * 20. / 255 + 60;  // [60, 80)
-  val = opts.bytes[2] * 20. / 255 + 50;  // [50, 70)
+  sat = opts.bytes[1] * 40. / 255 + 60;  // [60, 100)
+  val = opts.bytes[2] * 30. / 255 + 60;  // [60, 90)
   var bg = $.vtag.hsv2hex(hue, sat, val);
 
-  sat = opts.bytes[5] * 40. / 255;       // [0, 40)
+  hue += (30 * (opts.bytes[4] % 12));      // [0, 360)
+  hue %= 360;
+  sat = opts.bytes[5] * 50. / 255;       // [0, 50)
   val = opts.bytes[6] * 20. / 255 + 80;  // [80, 100)
   var fg = $.vtag.hsv2hex(hue, sat, val);
 
